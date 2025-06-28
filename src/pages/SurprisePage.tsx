@@ -31,14 +31,14 @@ const SurprisePage = () => {
       setIsVisible(true);
     }, 500);
 
-    // Initialize audio
-    audioRef.current = new Audio('/happy-birthday.mp3');
+    // Initialize audio using shared global instance
+    if (!window._birthdayAudio) {
+      window._birthdayAudio = new Audio('/happy-birthday.mp3');
+    }
+    audioRef.current = window._birthdayAudio;
     
     return () => {
       clearTimeout(timer);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
     };
   }, []);
 
@@ -49,8 +49,8 @@ const SurprisePage = () => {
       // Launch fireworks animation
       launchFireworks();
       
-      // Play birthday song
-      if (audioRef.current) {
+      // Play birthday song only if not already playing
+      if (audioRef.current && (audioRef.current.paused || audioRef.current.ended)) {
         audioRef.current.currentTime = 0;
         audioRef.current.play().catch(error => {
           console.error("Audio playback failed:", error);

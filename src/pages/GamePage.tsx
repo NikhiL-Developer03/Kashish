@@ -63,10 +63,22 @@ const Balloon: React.FC<BalloonProps> = ({ id, color, message, onPop }) => {
       }}
       onClick={() => {
         onPop();
-        // Play pop sound
-        const audio = new Audio('/pop.mp3');
-        audio.volume = 0.5; // Set volume to 50%
-        audio.play().catch(error => console.error("Audio playback failed:", error));
+        
+        // Stop any currently playing pop sounds and play a new one
+        if (window._popAudio && !window._popAudio.ended) {
+          window._popAudio.pause();
+          window._popAudio.currentTime = 0;
+        }
+        
+        // Create or reuse audio object
+        if (!window._popAudio) {
+          window._popAudio = new Audio('/pop.mp3');
+          window._popAudio.volume = 0.5; // Set volume to 50%
+        }
+        
+        // Play the sound
+        window._popAudio.currentTime = 0;
+        window._popAudio.play().catch(error => console.error("Audio playback failed:", error));
         
         // Trigger confetti
         triggerConfetti();

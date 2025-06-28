@@ -13,15 +13,26 @@ const InteractiveCake: React.FC<InteractiveCakeProps> = ({ name = 'Kashish' }) =
 
   // Initialize audio element
   useEffect(() => {
-    audioRef.current = new Audio('/happy-birthday.mp3');
-    audioRef.current.addEventListener('canplaythrough', () => {
+    // Use global audio instance to prevent multiple instances
+    if (!window._birthdayAudio) {
+      window._birthdayAudio = new Audio('/happy-birthday.mp3');
+    }
+    audioRef.current = window._birthdayAudio;
+    
+    const handleCanPlayThrough = () => {
       setIsAudioLoaded(true);
-    });
+    };
+    
+    audioRef.current.addEventListener('canplaythrough', handleCanPlayThrough);
+    
+    // Check if already loaded
+    if (audioRef.current.readyState >= 3) {
+      setIsAudioLoaded(true);
+    }
     
     return () => {
       if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.removeEventListener('canplaythrough', () => {});
+        audioRef.current.removeEventListener('canplaythrough', handleCanPlayThrough);
       }
     };
   }, []);
@@ -66,8 +77,8 @@ const InteractiveCake: React.FC<InteractiveCakeProps> = ({ name = 'Kashish' }) =
       setIsFlameVisible(false);
       setIsCelebrating(true);
       
-      // Play audio
-      if (audioRef.current) {
+      // Play audio - only if not already playing
+      if (audioRef.current && (audioRef.current.paused || audioRef.current.ended)) {
         audioRef.current.currentTime = 0;
         audioRef.current.play().catch((error) => {
           console.error("Audio playback failed:", error);
