@@ -1,73 +1,107 @@
-# Welcome to your Lovable project
+# 🎂 Birthday Celebration App for Kahish
 
-## Project info
+A beautiful, interactive birthday celebration web application with multiple interactive features including a balloon popping game, photo gallery, personalized birthday messages, and more!
 
-**URL**: https://lovable.dev/projects/4b63fd14-88b7-4415-943f-96a9bb11cd66
+![Birthday App](public/images/1.jpeg)
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Interactive Home Page**: Welcoming landing page with navigation to various birthday surprises
+- **Balloon Popping Game**: Fun interactive game where you pop balloons to reveal surprises and animations
+- **Photo Gallery**: Beautiful gallery of shared memories with fullscreen viewing
+- **Birthday Messages**: Collection of heartfelt birthday wishes and messages
+- **Memory Lane**: Timeline of special memories and moments
+- **Responsive Design**: Works perfectly on mobile, tablet, and desktop devices
 
-**Use Lovable**
+## 🚀 Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4b63fd14-88b7-4415-943f-96a9bb11cd66) and start prompting.
+This project is built with modern web technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React**: Frontend library for building the user interface
+- **TypeScript**: For type-safe code and better developer experience
+- **Vite**: Fast, modern build tool and development server
+- **Framer Motion**: For smooth animations and transitions
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **shadcn/ui**: UI component library for beautiful, accessible components
+- **React Router DOM**: For navigation between different pages
 
-**Use your preferred IDE**
+## 🛠️ Local Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v16+)
+- npm or bun package manager
 
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/yourusername/birthday-celebration-app.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd birthday-celebration-app
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
+# or if using bun
+bun install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+# or with bun
+bun dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173/`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚢 Deployment
 
-**Use GitHub Codespaces**
+### Deploying to Vercel
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Create a Vercel Account**: Sign up at [vercel.com](https://vercel.com) if you don't have an account.
 
-## What technologies are used for this project?
+2. **Install Vercel CLI**:
+   ```sh
+   npm install -g vercel
+   ```
 
-This project is built with:
+3. **Login to Vercel**:
+   ```sh
+   vercel login
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Deploy the Project**:
+   ```sh
+   # From the project root directory
+   vercel --prod
+   ```
 
-## How can I deploy this project?
+5. **Follow the Prompts**: Complete the setup process in your terminal.
 
-Simply open [Lovable](https://lovable.dev/projects/4b63fd14-88b7-4415-943f-96a9bb11cd66) and click on Share -> Publish.
+### Ensuring Images Deploy Correctly
 
-## Can I connect a custom domain to my Lovable project?
+All images in the `public/images` folder will be automatically deployed with your project. The image paths you're using like `/images/1.jpeg` will work correctly on Vercel.
 
-Yes, you can!
+## 📱 Optimized for All Devices
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Mobile-friendly**: Responsive design that works great on smartphones
+- **Tablet-optimized**: Perfect for mid-size screens
+- **Desktop-enhanced**: Takes advantage of larger screen real estate
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🎮 How to Play the Balloon Game
+
+1. Navigate to the Game page
+2. Click or tap on balloons as they float up
+3. Watch for special effects on milestone achievements
+4. Try to pop as many balloons as possible!
+
+## 💝 Personalized Content
+
+Feel free to customize the content by:
+- Adding more photos to the `public/images` folder
+- Editing messages in the `Messages.tsx` component
+- Adding new memories to the memories page
+
+## 🙏 Acknowledgements
+
+Special thanks to the open source community for the amazing libraries and tools that made this project possible.
