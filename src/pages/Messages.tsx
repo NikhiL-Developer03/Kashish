@@ -9,7 +9,7 @@ const Messages = () => {
   const birthdayWishes = [
     {
       id: 1,
-      message: "Wishing you a day filled with happiness and a year filled with joy. Happy birthday, Kahish! 🎉",
+      message: "Wishing you a day filled with happiness and a year filled with joy. Happy birthday, Kashish! 🎉",
       author: "Your Funny Friend",
       color: "from-pink-400 to-rose-500"
     },
@@ -95,7 +95,7 @@ const Messages = () => {
             Messages of Love 💝
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Here are heartfelt birthday wishes from my side, Kahish!
+            Here are heartfelt birthday wishes from my side, Kashish!
           </p>
         </div>
 

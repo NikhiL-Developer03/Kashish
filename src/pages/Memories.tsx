@@ -107,7 +107,7 @@ const Memories = () => {
             Our Journey Together 🛤️
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A timeline of beautiful memories and special moments we've shared, Kahish!
+            A timeline of beautiful memories and special moments we've shared, Kashish!
           </p>
         </div>
 
@@ -181,7 +181,7 @@ const Memories = () => {
             </p>
             <div className="text-6xl mb-6">🎂✨🎉</div>
             <p className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-              Happy Birthday, Kahish! 
+              Happy Birthday, Kashish! 
             </p>
             <p className="text-lg text-gray-600 mt-4">
               May this new year of your life be filled with love, laughter, and endless adventures!
